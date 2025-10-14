@@ -1,16 +1,23 @@
 ---
-
+import PreHeader from "../components/PreHeader.astro"
+import NavBar from "../components/NavBar.astro"
+import ThemeVars from "../components/ThemeVars.astro"
+import { site } from "../config/site"
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>{site.companyName}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <ThemeVars />
+    <PreHeader />
+    <NavBar />
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <h1>Home Page</h1>
+      <p>Navbar is above — we’ll style and build responsiveness next.</p>
+    </main>
+  </body>
 </html>

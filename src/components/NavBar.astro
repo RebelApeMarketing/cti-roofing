@@ -1,0 +1,121 @@
+---
+import { site } from "../config/site"
+import "../styles/global.css"
+---
+
+<style>
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+  }
+
+  .navbar .logo img {
+    width: 240px;
+    height: auto;
+    display: block;
+  }
+
+  /* Navigation links */
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 14pt;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: #24a455;
+  }
+
+  /* Hamburger styles */
+  .menu-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    nav {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: white;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem;
+      gap: 1rem;
+      display: none;
+    }
+
+    /* Toggle open */
+    .menu-toggle:checked ~ nav {
+      display: flex;
+    }
+
+    /* Hamburger button visible */
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<div class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src={site.logo || "/images/rebel-ape-marketing-logo.png"} alt={site.companyName} />
+    </div>
+
+    <!-- Hidden checkbox controls the menu -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</div>
