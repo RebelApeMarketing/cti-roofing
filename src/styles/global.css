@@ -1,1 +1,134 @@
 @import "tailwindcss";
+
+/* =====================================
+   Silverback Framework — Global Styles
+   Centralized theme defaults and typography
+   ===================================== */
+
+:root {
+  --color-primary: #24a455; /* Green */
+  --color-accent: #ffc107;  /* Yellow */
+  --color-text: #202020;
+  --color-muted: #6b7280;
+  --container-max: 1200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, .h1 {
+  font-size: clamp(2.2rem, 5vw + 1rem, 4.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+h3, .h3 {
+  font-size: clamp(1.6rem, 3vw + 1rem, 2.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h4, .h4 {
+  font-size: clamp(1.4rem, 2vw + 1rem, 2rem);
+  font-weight: 700;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  transition: background 0.25s ease, transform 0.12s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.text-center { text-align: center; }
+.text-white { color: #fff; }
+.text-muted { color: var(--color-muted); }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+.section {
+  padding: 4rem 1rem;
+}
+
+footer, header {
+  width: 100%;
+  color: #fff;
+}

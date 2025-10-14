@@ -1,23 +1,32 @@
----
-import PreHeader from "../components/PreHeader.astro"
-import NavBar from "../components/NavBar.astro"
-import ThemeVars from "../components/ThemeVars.astro"
+--- 
+import BaseLayout from "../layouts/BaseLayout.astro"
 import { site } from "../config/site"
+import Hero from "../components/Hero.astro"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{site.companyName}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <ThemeVars />
-    <PreHeader />
-    <NavBar />
-    <main class="mx-auto max-w-7xl px-4 py-8">
-      <h1>Home Page</h1>
-      <p>Navbar is above — we’ll style and build responsiveness next.</p>
-    </main>
-  </body>
-</html>
+<BaseLayout>
+	<Hero
+		eyebrow="HOME SERVICES MARKETING AGENCY"
+		headline='Get <span class="text-grad">3x More Leads</span> For Your <span class="text-grad">Home Service Business</span>''
+		subhead="We've created a custom tailored marketing framework specifically for home service companies."
+		ctaText="Schedule a Free Consultation"
+		ctaHref="/contact"
+		bgImage="/images/hero-new-roof.webp"
+	/>
+
+	<section>
+    <div class="container">
+		<h1>Testing h1</h1>
+		<h2>Testing h2</h2>
+		<h3>Testing h3</h3>
+		<h4>Testing h4</h4>
+		<h5>Testing h5</h5>
+		<h6>Testing h6</h6>
+		<p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		<a href="#" class="btn">This is a button</a>
+    </div>
+	</section>
+</BaseLayout>		
+
+
+

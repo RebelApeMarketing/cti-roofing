@@ -1,0 +1,160 @@
+---
+/**
+ * Hero.astro
+ * Reusable hero with configurable eyebrow, headline, subhead, button, and background image.
+ * Usage:
+ *  <Hero
+ *    eyebrow="HOME SERVICES MARKETING AGENCY"
+ *    headline="Get a Higher ROI on Your Marketing Spend Without Wasting $1,000's with a Generic Agency"
+ *    subhead="We've created a custom tailored marketing framework specifically for home service companies..."
+ *    ctaText="Schedule a Free Consultation"
+ *    ctaHref="/contact"
+ *    bgImage="/images/hero-bg.jpg"
+ *  />
+ */
+
+export interface Props {
+  eyebrow?: string
+  headline?: string
+  subhead?: string
+  ctaText?: string
+  ctaHref?: string
+  bgImage?: string
+  bgColor?: string
+  desktopHeight?: string // e.g. "650px"
+  headlineGradientAll?: boolean
+}
+
+const {
+  eyebrow = "HOME SERVICES MARKETING AGENCY",
+  headline = "Get a Higher ROI on Your Marketing Spend Without Wasting $1,000's with a Generic Agency",
+  subhead = "We've created a custom tailored marketing framework specifically for home service companies. That means we aren't trying to figure out your industry while also working with dentists, real estate agents, and brokers. It's only home services, that's what we do.",
+  ctaText = "Schedule a Free Consultation",
+  ctaHref = "#",
+  bgImage = "/images/hero-new-roof.webp",
+  bgColor = "#0f172a",
+  desktopHeight = "650px",
+  headlineGradientAll = false,
+} = Astro.props;
+---
+
+<style>
+  .hero {
+    position: relative;
+    color: #fff;
+    background-image: var(--hero-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--hero-bg-color, #0f172a);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+  }
+  .inner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 3rem 1rem;
+    min-height: var(--hero-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .content {
+    max-width: 1200px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+    /* ~1.7em desktop with graceful scaling */
+    font-size: clamp(1rem, 1.4vw + 0.6rem, 1.7em);
+    opacity: 0.95;
+  }
+  .headline {
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+    /* Very large but responsive */
+    font-size: clamp(2.6rem, 5.6vw + 1.4rem, 5.6rem);
+    text-wrap: balance;
+    display: inline-block;
+  }
+  :global(.text-grad), :global(.headline .text-grad) {
+    background: linear-gradient(to right, #FFA500, #29C041);
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    font-weight: 900;
+  }
+  .subhead {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    /* ~1.5em with scaling */
+    font-size: clamp(1.05rem, 1.2vw + 0.6rem, 1.5em);
+    opacity: 0.95;
+    color: #fff;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.75rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    background: #24a455;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    transition: transform 0.12s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+  .btn:hover {
+    background: #ffc107;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    opacity: 0.95;
+  }
+
+  /* Spacing tweaks for smaller screens */
+  @media (max-width: 1024px) {
+    .inner { padding: 6rem 1rem; }
+  }
+  @media (max-width: 640px) {
+    .inner {
+      min-height: 430px; /* scale down on mobile */
+    }
+    .content { max-width: 100%; }
+  }
+</style>
+
+<section class="hero" style={`--hero-bg: url('${bgImage}'); --hero-h: ${desktopHeight}; --hero-bg-color: ${bgColor};`}>
+  <div class="inner">
+    <div class="content">
+      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+      {headline && <h1 class={`headline ${headlineGradientAll ? 'text-grad' : ''}`} set:html={headline}></h1>}
+      {subhead && <p class="subhead">{subhead}</p>}
+      {ctaText && (
+        <div class="actions">
+          <a class="btn" href={ctaHref}>{ctaText}</a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

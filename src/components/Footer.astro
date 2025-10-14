@@ -1,0 +1,135 @@
+---
+import { site } from "../config/site"
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <div class="col logo-col">
+        <img src="/images/rebel-ape-marketing-iconmark-white.png" alt={site.companyName} class="logo" />
+        <p class="tagline">Helping home service businesses grow since 2017.</p>
+      </div>
+
+      <div class="col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href={site.phoneHref || ("tel:" + site.phone)}>{site.phone}</a></li>
+          <li><a href={"mailto:" + site.email}>{site.email}</a></li>
+          <li>{site.address}</li>
+        </ul>
+      </div>
+
+      <div class="col social">
+        <h4>Follow Us</h4>
+        <div class="icons">
+          <a href={site.socials?.facebook || "#"} aria-label="Facebook">Facebook</a><br />
+          <a href={site.socials?.instagram || "#"} aria-label="Instagram">Instagram</a><br />
+          <a href={site.socials?.linkedin || "#"} aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional Service Area Section -->
+    <div class="service-areas">
+      <h4>Areas We Serve</h4>
+      <p>Ogden, Layton, Salt Lake City, Provo, Saint George, Logan, and surrounding areas.</p>
+    </div>
+  </div>
+
+  <div class="legal">
+    <p>© {currentYear} {site.companyName}. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms & Conditions</a></p>
+  </div>
+</footer>
+
+<style>
+.footer {
+  background: #202020;
+  color: #fff;
+  padding-top: 3rem;
+}
+.footer p {
+  color: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.logo {
+  width: 90px;
+  margin-bottom: 1rem;
+}
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #24a455;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+.footer li {
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffc107;
+}
+.service-areas {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  padding-bottom: .5rem;
+}
+.service-areas h4 {
+  color: #24a455;
+  text-transform: uppercase;
+}
+.legal {
+  background: #202020;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+}
+.legal a {
+  color: #24a455;
+}
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .social .icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+</style>

@@ -1,0 +1,119 @@
+---
+/**
+ * Breadcrumbs.astro
+ * Auto builds crumbs from the current URL, e.g., /services/digital-marketing
+ * Usage:
+ *   <Breadcrumbs />
+ *   <Breadcrumbs labels={{ services: "Services", "digital-marketing": "Digital Marketing" }} />
+ */
+export interface Props {
+  labels?: Record<string, string>; // optional overrides for segment labels
+}
+
+const { labels = {} } = Astro.props;
+
+// Build segments from the current path
+const pathname = Astro.url.pathname.replace(/\/+/g, "/"); // normalize
+const rawSegments = pathname.split("/").filter(Boolean);
+
+// Build cumulative hrefs for each segment
+type Crumb = { label: string; href: string; isLast: boolean };
+
+function toTitleCase(slug: string): string {
+  return slug
+    .replace(/-/g, " ")
+    .split(" ")
+    .filter(Boolean)
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+const crumbs: Crumb[] = rawSegments.map((seg, idx) => {
+  const href = "/" + rawSegments.slice(0, idx + 1).join("/");
+  const label = labels[seg] ?? toTitleCase(seg);
+  const isLast = idx === rawSegments.length - 1;
+  return { label, href, isLast };
+});
+---
+
+<style>
+  .bc-wrap {
+    background: #f3f5f6;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+  }
+  nav[aria-label="Breadcrumb"] {
+    font-size: 14px;
+    color: #6b7280; /* slate-500-ish for base text */
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  ol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  a {
+    color: #24a455; /* brand green */
+    text-decoration: none;
+  }
+  a:hover { text-decoration: none; }
+
+  .sep {
+    color: rgba(0,0,0,0.35);
+  }
+  .current {
+    color: #374151; /* slate-700 */
+    font-weight: 500;
+  }
+
+  /* Slightly tighter on small screens */
+  @media (max-width: 640px) {
+    .container {
+      padding: 0.45rem 0.75rem;
+    }
+    nav[aria-label="Breadcrumb"] { font-size: 13px; }
+  }
+</style>
+
+<div class="bc-wrap">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <!-- Home -->
+        <li>
+          <a href="/">Home</a>
+          {rawSegments.length > 0 && <span class="sep">›</span>}
+        </li>
+
+        <!-- Dynamic segments -->
+        {crumbs.map(c => (
+          <li>
+            {c.isLast ? (
+              <span class="current">{c.label}</span>
+            ) : (
+              <>
+                <a href={c.href}>{c.label}</a>
+                <span class="sep">›</span>
+              </>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </div>
+</div>
