@@ -72,23 +72,23 @@ const {
       gap: 0.5rem;
     }
   }
+
+  .stars {
+    width: 95px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+  }
 </style>
 
 <div class="preheader" role="region" aria-label="Top info bar">
   <div class="container">
     <div class="left">
-      {hours && (
-        <span class="item" aria-label="Business hours">
-          <span class="dot" aria-hidden="true"></span>
-          <span>{hours}</span>
-        </span>
-      )}
-      {email && (
-        <a class="item" href={`mailto:${email}`} aria-label="Email">
-          <span class="dot" aria-hidden="true"></span>
-          <span>{email}</span>
-        </a>
-      )}
+      <span class="item" aria-label="Google rating">
+        <strong>4.9 Stars</strong> <span>on Google</span>
+        <img src="/images/5-star.png" alt="5 stars" class="stars" />
+      </span>
     </div>
 
     <div class="right">
