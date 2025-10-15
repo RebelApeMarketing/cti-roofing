@@ -1,0 +1,8 @@
+/* src/styles/components/preheader.css */
+.preheader { background:#24a455; color:#fff; min-height:50px; display:flex; align-items:center; border-bottom:1px solid rgba(0,0,0,.06); }
+.preheader .container { display:grid; grid-template-columns:1fr auto; gap:.75rem; align-items:center; padding:.4rem 1rem; margin:0 auto; max-width:var(--container-max); width:100%; }
+.preheader .left, .preheader .right { display:flex; align-items:center; gap:1rem; }
+.preheader .item { display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; }
+.preheader .dot { width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.7; }
+.preheader .stars { width:95px; height:auto; display:inline-block; vertical-align:middle; margin-left:.4rem; }
+@media (max-width:640px){ .preheader .left{ display:none; } .preheader .container{ grid-template-columns:1fr; padding-top:.6rem; padding-bottom:.6rem; } .preheader .right{ justify-self:center; justify-content:center; text-align:center; } }
