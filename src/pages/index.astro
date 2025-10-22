@@ -1,32 +1,32 @@
---- 
-import BaseLayout from "../layouts/BaseLayout.astro"
-import { site } from "../config/site"
-import Hero from "../components/Hero.astro"
+---
+import Layout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Testimonials from "../components/Testimonials.astro";
+import WhyCall from "../components/WhyCall.astro";
+import CtaInline from "../components/CtaInline.astro";
+import Faq from "../components/Faq.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout>
-	<Hero
-		eyebrow="HOME SERVICES MARKETING AGENCY"
-		headline='Get <span class="text-grad">3x More Leads</span> For Your <span class="text-grad">Home Service Business</span>''
-		subhead="We've created a custom tailored marketing framework specifically for home service companies."
-		ctaText="Schedule a Free Consultation"
-		ctaHref="/contact"
-		bgImage="/images/hero-new-roof.webp"
-	/>
+<Layout title="Expert Help When You Need It">
+  <Header />
+  
+  <Hero
+    eyebrow="OVER 1,000 ROOFS REPAIRED OR REPLACED"
+    headline="Get Expert Roofing Help in Minutes, Not Days"
+    subhead="Call CTI Roofing directly. No waiting on hold. Real experts ready to solve your roofing problem right now."
+    primaryText="Call Now: (801) 316-8799"
+    primaryHref="tel:+18013168799"
+  />
 
-	<section>
-    <div class="container">
-		<h1>Testing h1</h1>
-		<h2>Testing h2</h2>
-		<h3>Testing h3</h3>
-		<h4>Testing h4</h4>
-		<h5>Testing h5</h5>
-		<h6>Testing h6</h6>
-		<p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<a href="#" class="btn">This is a button</a>
-    </div>
-	</section>
-</BaseLayout>		
+  <WhyCall />
 
+  <Testimonials />
 
+  <CtaInline />
 
+  <Faq />
+
+  <Footer />
+</Layout>

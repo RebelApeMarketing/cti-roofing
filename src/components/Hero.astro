@@ -1,54 +1,54 @@
 ---
-/**
- * Hero.astro
- * Reusable hero with configurable eyebrow, headline, subhead, button, and background image.
- * Usage:
- *  <Hero
- *    eyebrow="HOME SERVICES MARKETING AGENCY"
- *    headline="Get a Higher ROI on Your Marketing Spend Without Wasting $1,000's with a Generic Agency"
- *    subhead="We've created a custom tailored marketing framework specifically for home service companies..."
- *    ctaText="Schedule a Free Consultation"
- *    ctaHref="/contact"
- *    bgImage="/images/hero-bg.jpg"
- *  />
- */
-
-export interface Props {
-  eyebrow?: string
-  headline?: string
-  subhead?: string
-  ctaText?: string
-  ctaHref?: string
-  bgImage?: string
-  bgColor?: string
-  desktopHeight?: string // e.g. "650px"
-  headlineGradientAll?: boolean
+interface Props {
+  eyebrow?: string;
+  headline: string;
+  subhead: string;
+  primaryText?: string;
+  primaryHref?: string;
 }
 
-const {
-  eyebrow = "HOME SERVICES MARKETING AGENCY",
-  headline = "Get a Higher ROI on Your Marketing Spend Without Wasting $1,000's with a Generic Agency",
-  subhead = "We've created a custom tailored marketing framework specifically for home service companies. That means we aren't trying to figure out your industry while also working with dentists, real estate agents, and brokers. It's only home services, that's what we do.",
-  ctaText = "Schedule a Free Consultation",
-  ctaHref = "#",
-  bgImage = "/images/hero-new-roof.webp",
-  bgColor = "#0f172a",
-  desktopHeight = "650px",
-  headlineGradientAll = false,
+const { 
+  eyebrow = "OVER 1,000 ROOFS REPAIRED OR REPLACED",
+  headline = "Get Expert Roofing Help in Minutes, Not Days",
+  subhead,
+  primaryText = "Call Now",
+  primaryHref = "tel:+18013168799"
 } = Astro.props;
 ---
 
-<section class="hero" style={`--hero-bg: url('${bgImage}'); --hero-h: ${desktopHeight}; --hero-bg-color: ${bgColor};`}>
-  <div class="inner">
-    <div class="content">
-      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
-      {headline && <h1 class={`headline ${headlineGradientAll ? 'text-grad' : ''}`} set:html={headline}></h1>}
-      {subhead && <p class="subhead">{subhead}</p>}
-      {ctaText && (
-        <div class="actions">
-          <a class="btn" href={ctaHref}>{ctaText}</a>
-        </div>
-      )}
+<section 
+  class="relative w-full bg-cover bg-center py-20 md:py-32 pt-42 md:pt-20"
+  style="background-image: url('https://RebelApeCDN.b-cdn.net/CTI-Roofing/hero-roofing-crew.webp')"
+>
+  <!-- Dark overlay for text contrast -->
+  <div class="absolute inset-0 bg-black/60"></div>
+  
+  <div class="relative max-w-6xl mx-auto px-6 text-center">
+    {eyebrow && (
+      <p class="text-lg font-semibold text-green-400 uppercase tracking-wider mb-4">
+        {eyebrow}
+      </p>
+    )}
+    
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+      {headline}
+    </h1>
+    
+    <p class="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto">
+      {subhead}
+    </p>
+
+    <!-- Primary CTA Button -->
+    <div class="flex flex-col gap-4 justify-center items-center">
+      <a 
+        href={primaryHref}
+        class="inline-block rounded-lg bg-green-600 text-white px-8 py-4 text-lg font-semibold hover:bg-green-700 transition duration-200 shadow-lg hover:shadow-xl drop-shadow-lg"
+      >
+        {primaryText}
+      </a>
+      <p class="text-sm text-gray-200">
+        Mon-Fri 8am-7pm, Sat 9am-12pm
+      </p>
     </div>
   </div>
 </section>

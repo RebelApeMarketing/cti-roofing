@@ -1,3 +1,30 @@
 ---
-import '../styles/global.css';
+import BaseLayout from "./BaseLayout.astro";
+import Header from '../components/Header.astro'
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title?: string;
+  lang?: string;
+  bodyClass?: string;
+}
+
+const {
+  title = "Silverback Framework",
+  lang = "en",
+  bodyClass = "",
+} = Astro.props as Props;
 ---
+<BaseLayout title={title} lang={lang} bodyClass={bodyClass}>
+  <slot name="head" slot="head" />
+  <slot name="head:global" slot="head:global" />
+  <slot name="body:start" slot="body:start" />
+
+  <Header />
+    <main id="main">
+      <slot />
+    </main>
+  <Footer />
+
+  <slot name="body:end" slot="body:end" />
+</BaseLayout>
