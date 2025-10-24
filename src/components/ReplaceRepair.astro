@@ -1,0 +1,112 @@
+---
+import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+  showDotMatrix?: boolean;
+}
+
+const { bgColor = 'bg-white', bgPattern = '', showDotMatrix = true } = Astro.props;
+---
+<section class={`py-16 md:py-24 px-4 relative overflow-hidden ${bgColor} ${bgPattern}`}>
+  {showDotMatrix && (
+    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+  )}
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 text-gray-900">Should You Repair or Replace Your Roof? Here's How to Decide.</h2>
+      <p class="text-lg text-gray-700">This is the question every homeowner asks. The honest answer: it depends.</p>
+    </div>
+    <div class="overflow-x-auto mb-12">
+      <table class="min-w-full border border-gray-200 divide-y divide-gray-200 text-left">
+        <thead class="bg-slate-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-gray-900 font-semibold border border-gray-200">Factor</th>
+            <th scope="col" class="px-6 py-3 text-gray-900 font-semibold border border-gray-200">Repair Makes Sense</th>
+            <th scope="col" class="px-6 py-3 text-gray-900 font-semibold border border-gray-200">Replacement Makes Sense</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr>
+            <td class="px-6 py-4 border border-gray-200 font-medium text-gray-900">Roof Age</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Less than 10 years old</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">More than 20 years old</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 border border-gray-200 font-medium text-gray-900">Problem Scope</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Localized damage or leaks</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Widespread damage or multiple issues</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 border border-gray-200 font-medium text-gray-900">Cost</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Lower cost repairs extend roof life</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">High repair costs approach replacement cost</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 border border-gray-200 font-medium text-gray-900">Future</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Plan to stay in home for a few more years</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Planning long-term or selling soon</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4 border border-gray-200 font-medium text-gray-900">Your Plan</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Quick fix to address immediate issues</td>
+            <td class="px-6 py-4 border border-gray-200 text-gray-700">Comprehensive solution for peace of mind</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mb-12 text-gray-700 text-center"><strong>Bottom Line:</strong> Consider your roof's condition, your budget, and your future plans carefully before deciding whether to repair or replace.</p>
+    
+    <h3 class="text-4xl font-bold mb-2 text-gray-900 text-center">What the Assessment Tells You</h3>
+    <p class="text-sm italic text-gray-600 mb-8 text-center">* Key insights from your inspection</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <!-- Left: Assessment checklist + Button -->
+      <div>
+        <ul class="space-y-3 text-gray-700 mb-8">
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>The current state of your roof's materials and structure</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>The extent and location of damage or wear</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>Estimated costs for repairs versus replacement</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>Expected lifespan after repairs or replacement</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>How your long-term plans affect your decision</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>Insurance coverage possibilities and next steps</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#76ba41] font-bold mr-3 flex-shrink-0">✓</span>
+            <span>Professional recommendations tailored to your situation</span>
+          </li>
+        </ul>
+        <ButtonFreeAssessment />
+      </div>
+
+      <!-- Right: Image -->
+      <div class="hidden md:block">
+        <div class="rounded-lg overflow-hidden shadow-md h-96">
+          <img 
+            src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/roof-inspection-walk-the-roof.webp"
+            alt="Roof inspection walkthrough"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

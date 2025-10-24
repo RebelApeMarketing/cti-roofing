@@ -1,15 +1,25 @@
 ---
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+  showDotMatrix?: boolean;
+}
+
+const { bgColor = 'bg-slate-100', bgPattern = '', showDotMatrix = true } = Astro.props;
 ---
 
-<section class="bg-slate-100 px-6 py-16 md:py-24">
-  <div class="max-w-6xl mx-auto">
+<section class={`px-6 py-16 md:py-24 relative overflow-hidden ${bgColor} ${bgPattern}`}>
+  {showDotMatrix && (
+    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+  )}
+  <div class="max-w-7xl mx-auto relative z-10">
     <!-- Header -->
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-        Highly Certified
+      <h2 class="text-4xl font-bold text-slate-900 mb-2">
+        Highly Certified & Recognized
       </h2>
       <p class="text-lg text-slate-600">
-        Industry-leading certifications and recognitions
+        Industry-leading certifications and recognitions you can trust
       </p>
     </div>
 
@@ -17,7 +27,7 @@
     <div class="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
       
       <!-- BBB Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/bbb-logo.webp" 
           alt="BBB Accredited"
@@ -26,7 +36,7 @@
       </div>
 
       <!-- CertainTeed Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/certainteed-logo.webp" 
           alt="CertainTeed Master Applicator"
@@ -34,17 +44,8 @@
         />
       </div>
 
-      <!-- CTI Roofing Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
-        <img 
-          src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roofing-logo.webp" 
-          alt="CTI Roofing"
-          class="h-full w-full object-contain"
-        />
-      </div>
-
       <!-- Eagle Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/eagle-logo.webp" 
           alt="Eagle Certification"
@@ -53,7 +54,7 @@
       </div>
 
       <!-- Google Guaranteed Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/google-guaranteed-logo.webp" 
           alt="Google Guaranteed"
@@ -62,7 +63,7 @@
       </div>
 
       <!-- Home Advisor Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/home-advisor-logo.webp" 
           alt="Home Advisor"
@@ -71,7 +72,7 @@
       </div>
 
       <!-- Licensed Guarantee Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/licenced-gurantee-logo.webp" 
           alt="Licensed and Guaranteed"
@@ -80,7 +81,7 @@
       </div>
 
       <!-- Porch Best Of Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/porch-best-of-logo.webp" 
           alt="Porch Best Of"
@@ -89,7 +90,7 @@
       </div>
 
       <!-- Porch Background Check Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/porch-bg-check-logo.webp" 
           alt="Porch Background Check"
@@ -98,7 +99,7 @@
       </div>
 
       <!-- RoofMaxx Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/roofmaxx-logo.png" 
           alt="RoofMaxx"
@@ -107,7 +108,7 @@
       </div>
 
       <!-- UASRC Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/uasrc-logo.webp" 
           alt="UASRC"
@@ -116,7 +117,7 @@
       </div>
 
       <!-- URCA Logo -->
-      <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-32">
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4 flex items-center justify-center h-32">
         <img 
           src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/urca-logo.webp" 
           alt="URCA"

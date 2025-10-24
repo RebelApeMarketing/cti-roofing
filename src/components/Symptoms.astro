@@ -1,0 +1,146 @@
+---
+import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+  showDotMatrix?: boolean;
+}
+
+const { 
+  bgColor = 'bg-white', 
+  bgPattern = '', 
+  showDotMatrix = true,
+} = Astro.props;
+---
+
+<section class={`py-16 md:py-24 px-4 relative overflow-hidden ${bgColor} ${bgPattern}`}>
+  {showDotMatrix && (
+    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+  )}
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <!-- Left: Content -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">How Do You Know If Your Roof Needs Work?</h2>
+        <p class="text-lg text-gray-700 mb-12">Recognizing the signs that your roof needs attention can save you from costly repairs down the line. Here are six common indicators to watch for.</p>
+
+        <div class="space-y-4">
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="m6.72 5.66 11.62 11.62A8.25 8.25 0 0 0 6.72 5.66Zm10.56 12.68L5.66 6.72a8.25 8.25 0 0 0 11.62 11.62ZM5.105 5.106c3.807-3.808 9.98-3.808 13.788 0 3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Missing or Damaged Shingles</h3>
+              <p class="text-gray-700">Shingles that are cracked, curled, or missing can expose your roof to water damage.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="M9.0276 4.36983C9.84851 3.59377 10.8715 3 12.05 3c1.1786 0 2.2016.59377 3.0225 1.36983.8255.78038 1.5331 1.82292 2.1072 2.92578C18.3188 9.48385 19.05 12.1425 19.05 14c0 3.866-3.134 7-7 7-3.86594 0-6.99995-3.134-6.99995-7 0-1.8575.73123-4.51615 1.87035-6.70439.57411-1.10286 1.28173-2.1454 2.1072-2.92578Zm2.8023 5.91657c.3082-.45832.1865-1.07968-.2718-1.38786-.4583-.30818-1.0797-.18648-1.3879.27182-.37473.55732-.66096 1.25684-.85365 1.91184-.19234.6537-.31649 1.3484-.31649 1.9178 0 .5523.44772 1 1.00004 1 .5522 0 1-.4477 1-1 0-.3189.0769-.8156.2351-1.3533.1579-.5365.3717-1.0286.5947-1.3603Z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Water Stains or Leaks</h3>
+              <p class="text-gray-700">Water spots on your ceilings or walls indicate leaks that need immediate repair.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="M8.97 14.316H5.004c-.322 0-.64-.08-.925-.232a2.022 2.022 0 0 1-.717-.645 2.108 2.108 0 0 1-.242-1.883l2.36-7.201C5.769 3.54 5.96 3 7.365 3c2.072 0 4.276.678 6.156 1.256.473.145.925.284 1.35.404h.114v9.862a25.485 25.485 0 0 0-4.238 5.514c-.197.376-.516.67-.901.83a1.74 1.74 0 0 1-1.21.048 1.79 1.79 0 0 1-.96-.757 1.867 1.867 0 0 1-.269-1.211l1.562-4.63ZM19.822 14H17V6a2 2 0 1 1 4 0v6.823c0 .65-.527 1.177-1.177 1.177Z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Moss or Algae Growth</h3>
+              <p class="text-gray-700">Moss can trap moisture and damage roofing materials over time.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0V8Zm-1 7a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Sagging Roof Deck</h3>
+              <p class="text-gray-700">A sagging roof is a serious structural issue that requires professional assessment.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="M4.5 12a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" />
+                </svg>
+
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Excessive Granules in Gutters</h3>
+              <p class="text-gray-700">Granule loss from shingles can reduce your roof's effectiveness and lifespan.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#76ba41]">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Age of Roof</h3>
+              <p class="text-gray-700">Roofs older than 20 years often need replacement or significant repairs.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Image + Button -->
+      <div class="md:hidden mb-8">
+        <div class="rounded-lg overflow-hidden shadow-md mb-6">
+          <img 
+            src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/roof-inspection-horizontal.webp"
+            alt="Roof inspection"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <div class="flex justify-center">
+          <ButtonFreeAssessment />
+        </div>
+      </div>
+
+      <div class="hidden md:flex md:flex-col md:justify-start md:gap-6">
+        <div class="rounded-lg overflow-hidden shadow-md h-[550px]">
+          <img 
+            src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/roof-inspection-vertical.webp"
+            alt="Roof inspection"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div class="flex justify-center md:justify-start">
+          <ButtonFreeAssessment />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

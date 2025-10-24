@@ -1,22 +1,28 @@
 ---
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+}
+
+const { bgColor = 'bg-slate-100', bgPattern = 'pattern-slate-diagonal' } = Astro.props;
 ---
 
-<section class="bg-slate-100 px-6 py-16 border-t border-slate-200">
+<section class={`px-6 py-16 md:py-24 border-t border-slate-200 relative overflow-hidden ${bgColor} ${bgPattern}`}>
   <div class="max-w-6xl mx-auto">
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <p class="text-sm font-semibold text-[#76ba41] uppercase tracking-wider mb-2">
-        Trusted by Thousands
-      </p>
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
-        Real Results from Real Customers
+      <h2 class="text-4xl font-bold text-slate-900 mb-2">
+        Why 1,000+ Northern Utah Homeowners Trust CTI
       </h2>
+      <p class="text-sm font-semibold text-[#76ba41] uppercase tracking-wider">
+        We're not the cheapest. We're the most honest.
+      </p>
     </div>
 
     <!-- Testimonials Grid -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
       <!-- Testimonial 1 - Judy Guymon -->
-      <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 shadow-2xl">
+      <div class="bg-white rounded-lg p-6 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
         <div class="flex gap-1 mb-4">
           <span class="text-yellow-400">★</span>
           <span class="text-yellow-400">★</span>
@@ -39,7 +45,7 @@
       </div>
 
       <!-- Testimonial 2 - Emily Slonaker -->
-      <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 shadow-2xl">
+      <div class="bg-white rounded-lg p-6 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
         <div class="flex gap-1 mb-4">
           <span class="text-yellow-400">★</span>
           <span class="text-yellow-400">★</span>
@@ -62,7 +68,7 @@
       </div>
 
       <!-- Testimonial 3 - Scott Daniels -->
-      <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 shadow-2xl">
+      <div class="bg-white rounded-lg p-6 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow">
         <div class="flex gap-1 mb-4">
           <span class="text-yellow-400">★</span>
           <span class="text-yellow-400">★</span>
@@ -85,20 +91,34 @@
       </div>
     </div>
 
-    <!-- Trust Stats -->
-    <div class="mt-16 grid grid-cols-3 gap-6 text-center">
+    <!-- Key Stats Grid (Now Below Testimonials) -->
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-6 md:gap-8 text-center mb-12">
       <div>
-        <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">4.9★</p>
-        <p class="text-slate-600 text-sm mt-2">Average Rating</p>
+        <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">20+</p>
+        <p class="text-slate-600 text-sm mt-2">Years in Business</p>
       </div>
       <div>
         <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">1,000+</p>
-        <p class="text-slate-600 text-sm mt-2">Roofs Completed</p>
+        <p class="text-slate-600 text-sm mt-2">Roofs Installed</p>
+      </div>
+      <div>
+        <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">A+</p>
+        <p class="text-slate-600 text-sm mt-2">BBB Rating</p>
+      </div>
+      <div>
+        <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">4.4★</p>
+        <p class="text-slate-600 text-sm mt-2">Average Review</p>
       </div>
       <div>
         <p class="text-3xl md:text-4xl font-bold text-[#76ba41]">100%</p>
-        <p class="text-slate-600 text-sm mt-2">Insurance Handled</p>
+        <p class="text-slate-600 text-sm mt-2">Licensed, Bonded, Insured</p>
       </div>
+    </div>
+
+    <div class="text-center">
+      <a href="#reviews" class="inline-block rounded-lg bg-[#76ba41] text-white px-8 py-4 text-lg font-semibold hover:bg-green-700 transition duration-200 shadow-lg hover:shadow-xl drop-shadow-lg">
+        See What Real Customers Say
+      </a>
     </div>
   </div>
 </section>

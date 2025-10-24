@@ -1,0 +1,43 @@
+---
+import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+}
+
+const { bgColor = 'bg-slate-100', bgPattern = 'pattern-slate-diagonal' } = Astro.props;
+---
+
+<section class={`py-16 md:py-24 px-4 relative overflow-hidden ${bgColor} ${bgPattern}`}>
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4 text-gray-900">Serving Northern Utah Communities</h2>
+    <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">We proudly serve homeowners throughout Davis, Weber, and Salt Lake counties. From Ogden to North Salt Lake and everywhere in between, we know Northern Utah roofs.</p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">Bountiful</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">Centerville</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">Ogden</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">Roy</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">Salt Lake City</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <p class="font-semibold text-gray-900">South Jordan</p>
+      </div>
+    </div>
+
+    <p class="text-gray-600 mb-12 text-lg">Local expertise. Local contractors. Local commitment.<br/><span class="italic text-gray-600 mb-12 text-lg">Don't see your location? We serve surrounding areas.</span></p>
+    
+    <div>
+      <ButtonFreeAssessment />
+    </div>
+  </div>
+</section>

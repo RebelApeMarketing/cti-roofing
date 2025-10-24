@@ -1,4 +1,6 @@
 ---
+import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
+import ButtonPhoneNumberOutline from './ButtonPhoneNumberOutline.astro';
 interface Props {
   eyebrow?: string;
   headline: string;
@@ -8,11 +10,11 @@ interface Props {
 }
 
 const { 
-  eyebrow = "OVER 1,000 ROOFS REPAIRED OR REPLACED",
-  headline = "Get Expert Roofing Help in Minutes, Not Days",
+  eyebrow,
+  headline,
   subhead,
-  primaryText = "Call Now",
-  primaryHref = "tel:+18013168799"
+  primaryText,
+  primaryHref,
 } = Astro.props;
 ---
 
@@ -23,32 +25,33 @@ const {
   <!-- Dark overlay for text contrast -->
   <div class="absolute inset-0 bg-black/60"></div>
   
-  <div class="relative max-w-6xl mx-auto px-6 text-center">
+  <div class="relative max-w-6xl mx-auto px-6 text-center text-white">
     {eyebrow && (
-      <p class="text-lg font-semibold text-[#76ba41] uppercase tracking-wider mb-4">
+      <p class="text-sm md:text-base text-green-400 font-semibold mb-4 uppercase tracking-wider">
         {eyebrow}
       </p>
     )}
     
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-      {headline}
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+      Think Something's Wrong With Your Roof?
     </h1>
     
-    <p class="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto">
-      {subhead}
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+      Get Answers From Northern Utah's Trusted Roofing Experts
+    </h2>
+
+    <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+      Don't wait until a small issue turns into a costly repair. Our experienced roofing professionals provide thorough inspections and honest assessments to keep your home safe and secure. Trust us to deliver quality service with no pressure and no obligation.
     </p>
 
-    <!-- Primary CTA Button -->
-    <div class="flex flex-col gap-4 justify-center items-center">
-      <a 
-        href={primaryHref}
-        class="inline-block rounded-lg bg-[#76ba41] text-white px-8 py-4 text-lg font-semibold hover:bg-green-700 transition duration-200 shadow-lg hover:shadow-xl drop-shadow-lg"
-      >
-        {primaryText}
-      </a>
-      <p class="text-sm text-gray-200">
-        Mon-Fri 8am-7pm, Sat 9am-12pm
-      </p>
+    <!-- CTA Buttons -->
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
+      <ButtonFreeAssessment />
+      <ButtonPhoneNumberOutline />
     </div>
+
+    <p class="text-sm text-gray-200 max-w-xl mx-auto">
+      ✓ Free assessment  |  ✓ No obligation  |  ✓ We answer within 30 seconds or call you back
+    </p>
   </div>
 </section>

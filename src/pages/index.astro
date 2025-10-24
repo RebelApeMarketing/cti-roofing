@@ -3,8 +3,14 @@ import Layout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Testimonials from "../components/Testimonials.astro";
+import WhatYouGet from "../components/WhatYouGet.astro";
+import Symptoms from "../components/Symptoms.astro";
+import CostOptions from "../components/CostOptions.astro";
+import ReplaceRepair from "../components/ReplaceRepair.astro";
+import CurbAppeal from "../components/CurbAppeal.astro";
 import WhyCall from "../components/WhyCall.astro";
 import CtaInline from "../components/CtaInline.astro";
+import ServiceAreas from "../components/ServiceAreas.astro";
 import Faq from "../components/Faq.astro";
 import InspectionForm from "../components/InspectionForm.astro";
 import Certified from "../components/Certified.astro";
@@ -15,15 +21,24 @@ import Footer from "../components/Footer.astro";
   <Header />
   <Hero
     eyebrow="OVER 1,000 ROOFS REPAIRED OR REPLACED"
-    headline="Get Expert Roofing Help in Minutes, Not Days"
-    subhead="Call CTI Roofing directly. No waiting on hold. Real experts ready to solve your roofing problem right now."
-    primaryText="Call Now: (801) 316-8799"
-    primaryHref="tel:+8013168799"
+    headline="Think Your Roof Might Need Work? Get Answers."
+    subhead="Most roof problems aren't emergencies, but they do need attention. Find out what's actually happening with your roof."
+    primaryText="Schedule Free Assessment"
+    primaryHref="#form"
   />
+  <WhatYouGet bgColor="bg-slate-100" />
+  <Symptoms bgColor="bg-white" />
+  <CostOptions bgColor="bg-slate-100"/>
+  <ReplaceRepair bgColor="bg-white" />
+  <CurbAppeal />
+  <WhyCall bgColor="bg-white" />
+  <ServiceAreas />
+
+  <Certified bgColor="bg-white" />
+
   <Testimonials />
-  <WhyCall />
-  <Certified />
-  <Faq />
+  <Faq bgColor="bg-white" />
+  
   <InspectionForm />
   <CtaInline />
   <Footer />

@@ -1,14 +1,27 @@
 ---
+import ButtonPhoneNumber from "./ButtonPhoneNumber.astro";
+interface Props {
+  bgColor?: string;
+  bgPattern?: string;
+  showDotMatrix?: boolean;
+}
+
+const { 
+  bgColor = 'bg-white', 
+  bgPattern = '', 
+  showDotMatrix = true 
+} = Astro.props;
 ---
 
-<section class="bg-white px-6 py-16 md:py-24 relative overflow-hidden">
-  <!-- Dot matrix texture background - stronger and closer -->
-  <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+<section class={`px-6 py-16 md:py-24 relative overflow-hidden ${bgColor} ${bgPattern}`}>
+  {showDotMatrix && (
+    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
+  )}
   
   <div class="max-w-6xl mx-auto relative z-10">
     <!-- Section Header -->
     <div class="mb-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">
         Schedule Your Expert Now
       </h2>
       <p class="text-lg text-slate-600">
@@ -30,9 +43,10 @@
         <!-- Benefit 1 -->
         <div class="flex gap-4">
           <div class="flex-shrink-0">
-            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-cti-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#76ba41]">
+                <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V9.375ZM6 12a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V12Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 15a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V15Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 18a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V18Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
@@ -49,9 +63,9 @@
         <!-- Benefit 2 -->
         <div class="flex gap-4">
           <div class="flex-shrink-0">
-            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-cti-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#76ba41]">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
@@ -68,9 +82,9 @@
         <!-- Benefit 3 -->
         <div class="flex gap-4">
           <div class="flex-shrink-0">
-            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-cti-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#76ba41]">
+                <path d="M7.493 18.5c-.425 0-.82-.236-.975-.632A7.48 7.48 0 0 1 6 15.125c0-1.75.599-3.358 1.602-4.634.151-.192.373-.309.6-.397.473-.183.89-.514 1.212-.924a9.042 9.042 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75A.75.75 0 0 1 15 2a2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H14.23c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23h-.777ZM2.331 10.727a11.969 11.969 0 0 0-.831 4.398 12 12 0 0 0 .52 3.507C2.28 19.482 3.105 20 3.994 20H4.9c.445 0 .72-.498.523-.898a8.963 8.963 0 0 1-.924-3.977c0-1.708.476-3.305 1.302-4.666.245-.403-.028-.959-.5-.959H4.25c-.832 0-1.612.453-1.918 1.227Z" />
               </svg>
             </div>
           </div>
@@ -86,25 +100,36 @@
       </div>
     </div>
 
-    <!-- CTA Section -->
-    <div class="bg-slate-100 rounded-lg p-8 md:p-12 text-center relative shadow-2xl">
+    <!-- CTA Section - Two Column Layout -->
+    <div class="bg-slate-100 rounded-lg p-8 md:p-12 relative shadow-2xl overflow-hidden pattern-slate-diagonal">
       <div class="absolute inset-0 opacity-5 rounded-lg" style="background-image: radial-gradient(circle, #1d3466 1px, transparent 1px); background-size: 20px 20px;"></div>
       <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">
-          Ready To Talk To Roofing Experts?
-        </h3>
-        <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
-          Call now and get an expert scheduled to your roof. Our team will assess your damage and walk you through your options.
-        </p>
-        <a 
-          href="tel:+18013168799"
-          class="inline-block rounded-lg bg-[#76ba41] text-white px-8 py-4 text-lg font-semibold hover:bg-green-700 transition duration-200 shadow-lg hover:shadow-xl drop-shadow-lg"
-        >
-          Call Now: (801) 316-8799
-        </a>
-        <p class="text-slate-500 text-sm mt-4">
-          Mon-Fri 8am-7pm, Sat 9am-12pm
-        </p>
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <!-- Image - 1/3 -->
+          <div class="md:col-span-1">
+            <img 
+              src="https://RebelApeCDN.b-cdn.net/CTI-Roofing/phone-scheduling-representative.webp"
+              alt="Roofing scheduling representative"
+              class="w-full h-auto rounded-lg object-cover shadow-md"
+            />
+          </div>
+          
+          <!-- Content - 2/3 -->
+          <div class="md:col-span-2">
+            <h3 class="text-3xl font-bold text-slate-900 mb-4">
+              Ready To Speak With Your Roofing Experts?
+            </h3>
+            <p class="text-slate-600 mb-6">
+              Call now and get an expert scheduled to your roof. Our team will assess your damage and walk you through your options.
+            </p>
+            <div class="flex flex-col gap-3 items-start">
+              <ButtonPhoneNumber />
+              <p class="text-slate-500 text-sm">
+                Mon-Fri 8am-7pm, Sat 9am-12pm
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
