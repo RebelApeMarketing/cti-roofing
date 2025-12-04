@@ -6,13 +6,10 @@ interface Props {
   showDotMatrix?: boolean;
 }
 
-const { bgColor = 'bg-white', bgPattern = '', showDotMatrix = true } = Astro.props;
+const { bgColor = 'bg-white' } = Astro.props;
 ---
-<section class={`py-16 md:py-24 px-4 relative overflow-hidden ${bgColor} ${bgPattern}`}>
-  {showDotMatrix && (
-    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
-  )}
-  <div class="max-w-7xl mx-auto relative z-10">
+<section class={`py-16 md:py-24 px-4 ${bgColor}`}>
+  <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold mb-4 text-gray-900">Should You Repair or Replace Your Roof? Here's How to Decide.</h2>
       <p class="text-lg text-gray-700">This is the question every homeowner asks. The honest answer: it depends.</p>

@@ -1,0 +1,63 @@
+---
+interface Props {
+  bgColor?: string;
+}
+
+const { bgColor = 'bg-white' } = Astro.props;
+
+const images = [
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-1.webp",
+    alt: "CTI Roofing project 1",
+  },
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-2.webp",
+    alt: "CTI Roofing project 2",
+  },
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-3.webp",
+    alt: "CTI Roofing project 3",
+  },
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-4.webp",
+    alt: "CTI Roofing project 4",
+  },
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-5.webp",
+    alt: "CTI Roofing project 5",
+  },
+  {
+    src: "https://RebelApeCDN.b-cdn.net/CTI-Roofing/cti-roof-inspection-6.webp",
+    alt: "CTI Roofing project 6",
+  },
+];
+---
+
+<section aria-labelledby="portfolio-heading" class={`py-16 md:py-24 ${bgColor}`}>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center">
+      <h2
+        id="portfolio-heading"
+        class="text-4xl font-bold text-slate-900 mb-2"
+      >
+        Recent Roof Projects
+      </h2>
+      <p class="text-lg text-slate-600">
+        A few examples of roofs we have completed for homeowners.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {images.map((img) => (
+        <figure class="overflow-hidden rounded-xl shadow-xl">
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            class="block h-64 w-full object-cover"
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

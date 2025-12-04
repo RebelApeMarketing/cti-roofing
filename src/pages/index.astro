@@ -14,32 +14,31 @@ import ServiceAreas from "../components/ServiceAreas.astro";
 import Faq from "../components/Faq.astro";
 import InspectionForm from "../components/InspectionForm.astro";
 import Certified from "../components/Certified.astro";
+import Portfolio from "../components/Portfolio.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Something Wrong With Your Roof? | CTI Roofing">
+<Layout title="Roof Inspection | CTI Roofing">
   <Header />
   <Hero
-    eyebrow="OVER 1,000 ROOFS REPAIRED OR REPLACED"
-    headline="Think Your Roof Might Need Work? Get Answers."
+    eyebrow="OVER 4,000 ROOFS REPAIRED OR REPLACED"
+    headline="Time For a Roof Inspection?"
     subhead="Most roof problems aren't emergencies, but they do need attention. Find out what's actually happening with your roof."
     primaryText="Schedule Free Assessment"
     primaryHref="#form"
   />
+  <Testimonials bgColor="bg-slate-100" />
+  <Certified bgColor="bg-white" />
   <WhatYouGet bgColor="bg-slate-100" />
   <Symptoms bgColor="bg-white" />
-  <CostOptions bgColor="bg-slate-100"/>
+  <CostOptions bgColor="bg-slate-100" />
   <ReplaceRepair bgColor="bg-white" />
-  <CurbAppeal />
-  <WhyCall bgColor="bg-white" />
-  <ServiceAreas />
-
-  <Certified bgColor="bg-white" />
-
-  <Testimonials />
-  <Faq bgColor="bg-white" />
-  
-  <InspectionForm />
+  <CurbAppeal bgColor="bg-slate-100" />
+  <Portfolio bgColor="bg-white" />
+  <WhyCall bgColor="bg-slate-100" />
+  <ServiceAreas bgColor="bg-white" />
+  <Faq bgColor="bg-slate-100" />
+  <InspectionForm bgColor="bg-white" />
   <CtaInline />
   <Footer />
 </Layout>

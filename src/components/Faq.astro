@@ -1,11 +1,13 @@
 ---
+interface Props {
+  bgColor?: string;
+}
+
+const { bgColor = 'bg-slate-100' } = Astro.props;
 ---
 
-<section class="bg-white px-6 py-16 md:py-24 relative overflow-hidden">
-  <!-- Dot matrix texture background - stronger and closer -->
-  <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
-
-  <div class="max-w-6xl mx-auto relative z-10">
+<section class={`px-6 py-16 md:py-24 ${bgColor}`}>
+  <div class="max-w-6xl mx-auto">
     <!-- Section Header -->
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">

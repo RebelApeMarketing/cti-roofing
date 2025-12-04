@@ -6,17 +6,12 @@ interface Props {
   showDotMatrix?: boolean;
 }
 
-const { 
-  bgColor = 'bg-slate-100', 
-  bgPattern = 'pattern-slate-diagonal', 
-  showDotMatrix = false 
+const {
+  bgColor = 'bg-slate-100'
 } = Astro.props;
 ---
 
-<section class={`py-16 md:py-24 px-4 relative overflow-hidden ${bgColor} ${bgPattern}`}>
-  {showDotMatrix && (
-    <div class="absolute inset-0 opacity-7" style="background-image: radial-gradient(circle, #1d3466 1.5px, transparent 1.5px); background-size: 12px 12px;"></div>
-  )}
+<section class={`py-16 md:py-24 px-4 ${bgColor}`}>
 
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-12">
@@ -156,9 +151,9 @@ const {
           </li>
         </ul>
 
-        <button class="w-full mt-8 bg-[#76ba41] hover:bg-[#679d37] text-white font-semibold py-3 px-6 rounded-lg transition-colors">
-          Explore Options
-        </button>
+        <a href="tel:8013168799" class="block w-full mt-8 bg-[#76ba41] hover:bg-[#679d37] text-white font-semibold py-3 px-6 rounded-lg transition-colors text-center">
+          Call Today
+        </a>
       </div>
     </div>
   </div>
