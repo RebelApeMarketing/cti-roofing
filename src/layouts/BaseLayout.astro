@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
+import GoogleTagManagerBody from "../components/GoogleTagManagerBody.astro";
+
 interface Props {
   title?: string;
   lang?: string;
@@ -10,7 +13,7 @@ const {
   title = "CTI Roofing",
   lang = "en",
   bodyClass = "",
-} = Astro.props;
+} = Astro.props as Props;
 ---
 <html lang={lang}>
   <head>
@@ -19,14 +22,8 @@ const {
     <link rel="icon" type="image/png" href="https://RebelApeCDN.b-cdn.net/CTI-Roofing/favicon.png" />
 
     <title>{title}</title>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K9ZR8397');</script>
-    <!-- End Google Tag Manager -->
+
+    <GoogleTagManager />
 
     <slot name="head" />
 
@@ -34,10 +31,7 @@ const {
 
   <body class={`antialiased ${bodyClass}`.trim()}>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9ZR8397"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <GoogleTagManagerBody />
 
     <main id="main">
       <slot />
