@@ -5,12 +5,14 @@ import GoogleTagManagerBody from "../components/GoogleTagManagerBody.astro";
 
 interface Props {
   title?: string;
+  description?: string;
   lang?: string;
   bodyClass?: string;
 }
 
 const {
   title = "CTI Roofing",
+  description = "",
   lang = "en",
   bodyClass = "",
 } = Astro.props as Props;
@@ -22,6 +24,7 @@ const {
     <link rel="icon" type="image/png" href="https://RebelApeCDN.b-cdn.net/CTI-Roofing/favicon.png" />
 
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
 
     <GoogleTagManager />
 

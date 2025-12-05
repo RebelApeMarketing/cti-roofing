@@ -1,0 +1,188 @@
+---
+interface Props {
+  bgColor?: string;
+}
+
+const { bgColor = 'bg-white' } = Astro.props;
+---
+
+<section class={`py-16 md:py-24 px-4 ${bgColor}`}>
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 text-gray-900">What Does Homeowners Insurance Typically Cover?</h2>
+      <p class="text-lg text-gray-700">Understanding your coverage can save you thousands on your roof replacement.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- Left Column: Coverage List -->
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Most Policies Cover:</h3>
+
+        <div class="space-y-4 mb-8">
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Wind & Hail Damage</h4>
+              <p class="text-gray-700 text-sm">The most common covered perils in Arizona</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Complete Roof Replacement</h4>
+              <p class="text-gray-700 text-sm">Full tear-off and installation when damage is extensive</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Underlayment & Decking</h4>
+              <p class="text-gray-700 text-sm">Structural components damaged by covered perils</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Gutters & Downspouts</h4>
+              <p class="text-gray-700 text-sm">Often damaged during the same weather event</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Ventilation Systems</h4>
+              <p class="text-gray-700 text-sm">Ridge vents, soffit vents, and attic ventilation</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Flashing & Drip Edge</h4>
+              <p class="text-gray-700 text-sm">Critical protective components around chimneys, vents, and eaves</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                <svg class="w-4 h-4 text-[#76ba41]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">Interior Water Damage</h4>
+              <p class="text-gray-700 text-sm">Ceiling and wall repairs from roof leaks (subject to policy terms)</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm italic text-gray-600">
+          * Coverage varies by policy. We'll review your specific policy during the inspection to determine what's covered.
+        </p>
+      </div>
+
+      <!-- Right Column: Highlighted Box -->
+      <div>
+        <div class="bg-[#76ba41] text-white rounded-lg p-8 shadow-xl sticky top-24">
+          <div class="mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                <path fill-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">We Handle the Insurance Process</h3>
+          </div>
+
+          <p class="text-lg mb-6 leading-relaxed">
+            You don't have to navigate the insurance claim alone. We've helped thousands of Arizona homeowners get their roofs covered by insurance.
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 flex-shrink-0 mt-1">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+              <span>We document every inch of damage</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 flex-shrink-0 mt-1">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+              <span>We work directly with your adjuster</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 flex-shrink-0 mt-1">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+              <span>We handle all the paperwork</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 flex-shrink-0 mt-1">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+              <span>We advocate for maximum coverage</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 flex-shrink-0 mt-1">
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+              </svg>
+              <span>You only pay your deductible</span>
+            </div>
+          </div>
+
+          <div class="bg-white/10 border-2 border-white/30 rounded-lg p-4">
+            <p class="text-sm font-semibold">
+              "They made the insurance process so easy. I never had to call my insurance company once—they handled everything and got my claim fully approved."
+            </p>
+            <p class="text-sm mt-2 text-white/80">— Arizona Homeowner</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,6 +1,4 @@
 ---
-import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
-import ButtonPhoneNumberOutline from './ButtonPhoneNumberOutline.astro';
 interface Props {
   eyebrow?: string;
   headline: string;
@@ -9,7 +7,7 @@ interface Props {
   primaryHref?: string;
 }
 
-const { 
+const {
   eyebrow,
   headline,
   subhead,
@@ -18,40 +16,93 @@ const {
 } = Astro.props;
 ---
 
-<section 
-  class="relative w-full bg-cover bg-center py-20 pt-25 md:py-30 md:pt-40"
+<section
+  class="relative w-full bg-cover bg-center py-12 md:py-20"
   style="background-image: url('https://RebelApeCDN.b-cdn.net/CTI-Roofing/hero-roofing-crew.webp')"
 >
   <!-- Dark overlay for text contrast -->
   <div class="absolute inset-0 bg-black/75"></div>
-  
-  <div class="relative max-w-6xl mx-auto px-6 text-center text-white">
-    {eyebrow && (
-      <p class="text-sm md:text-base text-green-400 font-semibold mb-4 uppercase tracking-wider">
-        {eyebrow}
-      </p>
-    )}
-    
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-      Time For a Roof Inspection?
-    </h1>
-    
-    <h2 class="text-2xl md:text-3xl font-semibold mb-6">
-      Get Answers From Northern Utah's Trusted Roofing Experts
-    </h2>
 
-    <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-      Don't wait until a small issue turns into a costly repair. Our experienced roofing professionals provide thorough inspections and honest assessments to keep your home safe and secure. Trust us to deliver quality service with no pressure and no obligation.
-    </p>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <!-- 50/50 Split Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-    <!-- CTA Buttons -->
-    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
-      <ButtonFreeAssessment />
-      <ButtonPhoneNumberOutline />
+      <!-- Left Column - 50% -->
+      <div class="text-white">
+        {eyebrow && (
+          <p class="text-base md:text-base text-green-400 font-semibold mb-4 uppercase tracking-wider text-center lg:text-left">
+            {eyebrow}
+          </p>
+        )}
+
+        <h1 class="text-5xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-center lg:text-left">
+          {headline}
+        </h1>
+
+        <p class="text-xl md:text-2xl mb-8 leading-relaxed text-center lg:text-left">
+          {subhead}
+        </p>
+
+        <!-- Mobile: Form appears here, desktop: shown in right column -->
+        <div class="lg:hidden mb-8 bg-white/95 rounded-lg p-2 shadow-2xl">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/tnjSKyDxKSKXuLZTTDtx"
+            style="width:100%;height:1014px;border:none;border-radius:3px"
+            id="inline-tnjSKyDxKSKXuLZTTDtx"
+            data-layout='{"id":"INLINE"}'
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Free Roof Inspection Form | AZ"
+            data-height="1014"
+            data-layout-iframe-id="inline-tnjSKyDxKSKXuLZTTDtx"
+            data-form-id="tnjSKyDxKSKXuLZTTDtx"
+            title="Free Roof Inspection Form | AZ"
+          ></iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+
+        <div class="flex flex-col gap-4 items-center lg:items-start my-8">
+          <a
+            href="tel:4805308346"
+            class="inline-block rounded-lg border-2 border-white text-white px-8 py-4 text-lg font-semibold hover:bg-white/10 transition duration-200"
+          >
+            Call: (480) 530-8346
+          </a>
+
+          <p class="text-white/80 text-sm italic text-center lg:text-left max-w-xl">
+            * While many Arizona homeowners qualify for insurance coverage on roof damage, actual coverage and payout amounts vary based on your specific policy, deductible, and the extent of damage. We'll help you understand your coverage during the free inspection.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column - 50% - Desktop Only -->
+      <div class="hidden lg:block">
+        <div class="bg-white/95 rounded-lg p-2 shadow-2xl">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/tnjSKyDxKSKXuLZTTDtx"
+            style="width:100%;height:1014px;border:none;border-radius:3px"
+            id="inline-tnjSKyDxKSKXuLZTTDtx-desktop"
+            data-layout='{"id":"INLINE"}'
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Free Roof Inspection Form | AZ"
+            data-height="1014"
+            data-layout-iframe-id="inline-tnjSKyDxKSKXuLZTTDtx-desktop"
+            data-form-id="tnjSKyDxKSKXuLZTTDtx"
+            title="Free Roof Inspection Form | AZ"
+          ></iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+      </div>
+
     </div>
-
-    <p class="text-sm text-gray-200 max-w-xl mx-auto">
-      ✓ Free assessment  |  ✓ No obligation  |  ✓ We work with your insurance
-    </p>
   </div>
 </section>

@@ -3,42 +3,37 @@ import Layout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Testimonials from "../components/Testimonials.astro";
-import WhatYouGet from "../components/WhatYouGet.astro";
+import WhatToExpect from "../components/WhatToExpect.astro";
 import Symptoms from "../components/Symptoms.astro";
-import CostOptions from "../components/CostOptions.astro";
-import ReplaceRepair from "../components/ReplaceRepair.astro";
-import CurbAppeal from "../components/CurbAppeal.astro";
-import WhyCall from "../components/WhyCall.astro";
+import InsuranceCoverage from "../components/InsuranceCoverage.astro";
 import CtaInline from "../components/CtaInline.astro";
 import ServiceAreas from "../components/ServiceAreas.astro";
 import Faq from "../components/Faq.astro";
-import InspectionForm from "../components/InspectionForm.astro";
 import Certified from "../components/Certified.astro";
 import Portfolio from "../components/Portfolio.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Roof Inspection | CTI Roofing">
+<Layout
+  title="Free Roof Inspection Mesa AZ | Up to 97% Covered by Insurance | CTI Roofing"
+  description="Mesa & Tempe homeowners: Get a free roof inspection and find out if insurance covers your new roof. No obligation. Licensed & insured. Call (480) 530-8346."
+>
   <Header />
   <Hero
-    eyebrow="OVER 4,000 ROOFS REPAIRED OR REPLACED"
-    headline="Time For a Roof Inspection?"
-    subhead="Most roof problems aren't emergencies, but they do need attention. Find out what's actually happening with your roof."
-    primaryText="Schedule Free Assessment"
+    eyebrow="SERVING ARIZONA HOMEOWNERS SINCE 2003"
+    headline="Arizona Homeowners: Get Up to 97% of Your New Roof Paid By Insurance"
+    subhead="Free inspection. No obligation. Most homes qualify."
+    primaryText="Schedule Free Inspection"
     primaryHref="#form"
   />
-  <Testimonials bgColor="bg-slate-100" />
-  <Certified bgColor="bg-white" />
-  <WhatYouGet bgColor="bg-slate-100" />
+  <Certified bgColor="bg-slate-100" />
+  <Testimonials bgColor="bg-white" />
+  <WhatToExpect bgColor="bg-slate-100" />
   <Symptoms bgColor="bg-white" />
-  <CostOptions bgColor="bg-slate-100" />
-  <ReplaceRepair bgColor="bg-white" />
-  <CurbAppeal bgColor="bg-slate-100" />
+  <InsuranceCoverage bgColor="bg-slate-100" />
   <Portfolio bgColor="bg-white" />
-  <WhyCall bgColor="bg-slate-100" />
-  <ServiceAreas bgColor="bg-white" />
-  <Faq bgColor="bg-slate-100" />
-  <InspectionForm bgColor="bg-white" />
+  <ServiceAreas bgColor="bg-slate-100" />
+  <Faq bgColor="bg-white" />
   <CtaInline />
   <Footer />
 </Layout>

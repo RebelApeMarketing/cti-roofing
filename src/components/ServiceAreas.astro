@@ -1,5 +1,4 @@
 ---
-import ButtonFreeAssessment from './ButtonFreeAssessment.astro';
 interface Props {
   bgColor?: string;
   bgPattern?: string;
@@ -10,88 +9,48 @@ const { bgColor = 'bg-white' } = Astro.props;
 
 <section class={`py-16 md:py-24 px-4 ${bgColor}`}>
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-4 text-gray-900">Serving Northern Utah Communities</h2>
-    <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">We proudly serve homeowners throughout Davis, Weber, and Salt Lake counties. From Ogden to South Jordan and everywhere in between, we know Northern Utah roofs.</p>
+    <h2 class="text-4xl font-bold mb-4 text-gray-900">Proudly Serving Mesa, Tempe, and the Greater Phoenix Area</h2>
+    <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">Expert roofing services throughout the East Valley and Phoenix metro. We know Arizona roofs.</p>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Ogden</p>
+        <p class="font-semibold text-white">Mesa</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Roy</p>
+        <p class="font-semibold text-white">Tempe</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Clearfield</p>
+        <p class="font-semibold text-white">Scottsdale</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Layton</p>
+        <p class="font-semibold text-white">Gilbert</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Syracuse</p>
+        <p class="font-semibold text-white">Chandler</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Farmington</p>
+        <p class="font-semibold text-white">Phoenix</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Kaysville</p>
+        <p class="font-semibold text-white">Apache Junction</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Bountiful</p>
+        <p class="font-semibold text-white">Queen Creek</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Centerville</p>
+        <p class="font-semibold text-white">Fountain Hills</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Woods Cross</p>
+        <p class="font-semibold text-white">Paradise Valley</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">North Salt Lake</p>
+        <p class="font-semibold text-white">Glendale</p>
       </div>
       <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Salt Lake City</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Murray</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Holladay</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Cottonwood Heights</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Sandy</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Midvale</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">West Jordan</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">South Jordan</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Draper</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Riverton</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Herriman</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">West Valley City</p>
-      </div>
-      <div class="bg-[#76ba41] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-        <p class="font-semibold text-white">Taylorsville</p>
+        <p class="font-semibold text-white">Peoria</p>
       </div>
     </div>
 
-    <p class="text-gray-600 mb-12 text-lg">Local expertise. Local contractors. Local commitment.<br/><span class="italic text-gray-600 mb-12 text-lg">Don't see your location? We serve surrounding areas.</span></p>
-    
-    <div>
-      <ButtonFreeAssessment />
-    </div>
+    <p class="text-gray-600 text-lg">Licensed and insured in Arizona • Serving homeowners within 25 miles of Mesa</p>
   </div>
 </section>
